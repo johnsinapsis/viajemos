@@ -1,1 +1,18 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+.my-title{
+	font-family: 'Potta One', cursive;
+	font-size: $font-size-title;	
+}
+
+.padding-top-center{
+	padding-top: $padding-top-center;
+}
