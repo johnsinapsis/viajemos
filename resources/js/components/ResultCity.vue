@@ -14,8 +14,14 @@
 
 	export default{
 		props: {
-			city: Object
+			options: Object
 		},
+		data: function(){
+			return{
+				lat: this.options.center.lat,
+				lng: this.options.center.lng,
+			}
+		}
 		
 	}
 </script>

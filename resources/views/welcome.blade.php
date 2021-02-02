@@ -22,8 +22,9 @@
                 <v-container>
                     <v-row>
                         <v-col
-                            cols="6"
+                            cols="12"
                             md="4"
+                            sm="6"
                         >
                             <city-list :cities="cities" v-on:update="updateCity"></city-list>
                         </v-col>
@@ -37,9 +38,9 @@
                                 Seleccione Una ciudad para obtener información
                             </div>
                             <div v-if="city!==0">
-                                <result-city></result-city>
+                                <result-city :options="getDataCity"></result-city>
                             </div>
-                            <gmaps-map v-if="city!==0" :options="getDataCity">
+                            <gmaps-map v-if="city!==0" :options="getDataCity" class="my-map">
                                {{--  <gmaps-marker :position="{ lat: 28.53834, lng: -81.379242 }" /> --}}
 
                             </gmaps-map>

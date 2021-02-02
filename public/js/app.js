@@ -2036,7 +2036,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    city: Object
+    options: Object
+  },
+  data: function data() {
+    return {
+      lat: this.options.center.lat,
+      lng: this.options.center.lng
+    };
   }
 });
 
