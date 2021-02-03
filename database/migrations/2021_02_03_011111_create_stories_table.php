@@ -16,7 +16,7 @@ class CreateStoriesTable extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('city_id');
-            $table->unsignedBigInteger('humedity');
+            $table->string('humedity',20);
             $table->timestamps();
         });
     }

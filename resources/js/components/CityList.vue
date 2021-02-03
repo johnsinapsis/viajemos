@@ -42,11 +42,7 @@
     },
     data: () => ({
       selectedItem: -1,
-      items: [
-        { text: 'Real-Time', icon: 'mdi-numeric-1-circle-outline' },
-        { text: 'Audience', icon: 'mdi-numeric-2-circle-outline' },
-        { text: 'Conversions', icon: 'mdi-numeric-3-circle-outline' },
-      ],
+      
     }),
     watch:{
       selectedItem: function(val){

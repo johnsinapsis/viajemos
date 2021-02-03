@@ -30,18 +30,18 @@
 	    header
 	);
 
-	const proxyurl = "https://cors-anywhere.herokuapp.com/";
-	//console.log(auth_header)
 	export default{
 		props: {
-			options: Object
+			options: Object,
+			cityId: Number
 		},
 		data: function(){
 			return{
 				lat: this.options.center.lat,
 				lng: this.options.center.lng,
 				humidity: 'Cargando humedad...',
-				name: ''
+				name: '',
+				baseUrl
 			}
 		},
 		methods:{
@@ -60,6 +60,7 @@
 				            //console.log(allData)
 				            k.humidity = allData.current_observation.atmosphere.humidity + "%",
 				            k.name = 'en '+ allData.location.city
+				            k.saveHistory()
 				        }
 				    }
 				);
@@ -69,6 +70,13 @@
 				this.lng = this.options.center.lng
 				this.humidity = 'Cargando humedad...'
 				this.name= ''
+			},
+			saveHistory: function(){
+				axios.post(this.baseUrl+'/history',{city_id:this.cityId,humedity:this.humidity})
+					.then((response) => {
+						console.log("Dato almacenado en el historial");
+					})
+					.catch((error) => console.error(error))
 			}
 		},
 		watch:{

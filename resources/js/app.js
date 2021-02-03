@@ -16,6 +16,10 @@ Vue.use(Vuetify)
 
 Vue.use(x5GMaps, '')
 
+import moment from 'moment';
+//var day = moment("1995-12-25");
+moment.locale('es');
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -30,6 +34,7 @@ Vue.use(x5GMaps, '')
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('city-list', require('./components/CityList.vue').default);
 Vue.component('result-city', require('./components/ResultCity.vue').default);
+Vue.component('history-list', require('./components/HistoryList.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -79,6 +84,9 @@ const app = new Vue({
 		    },
     	],
     	city: 0,
+    	history:false,
+    	stories:[],
+    	baseUrl
     	
     },
     computed:{
@@ -103,7 +111,25 @@ const app = new Vue({
     	updateCity(index){
     		if(index < this.cities.length){
     			this.city = this.cities[index].id
+    			this.history = false
     		}
+    		else{
+    			this.city=0
+    			this.history = true
+    			this.updateStories()
+    		}
+    	},
+    	updateStories(){
+    		axios.get(this.baseUrl+'/history')
+    			.then((response) =>{
+    				this.stories = response.data
+    				for(var i=0; i < this.stories.length; i++){
+    					this.stories[i].created_at =  moment(this.stories[i].created_at).format('LLLL')
+    				}
+    				//console.log(this.stories)
+    			})
+    			.catch((error) => console.error(error))
     	}
     }
+
 });

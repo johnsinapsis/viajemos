@@ -34,17 +34,17 @@
                             md="8"
                             justify="center"
                         >
-                            <div v-if="city===0" class="text-center my-subtitle padding-top-center" >
+                            <div v-if="city===0 && !history" class="text-center my-subtitle padding-top-center" >
                                 Seleccione Una ciudad para obtener información
                             </div>
                             <div v-if="city!==0">
-                                <result-city :options="getDataCity"></result-city>
+                                <result-city :options="getDataCity" :city-id="city"></result-city>
                             </div>
-                            <gmaps-map v-if="city!==0" :options="getDataCity" class="my-map">
-                               {{--  <gmaps-marker :position="{ lat: 28.53834, lng: -81.379242 }" /> --}}
-
+                            <gmaps-map v-if="city!==0 " :options="getDataCity" class="my-map">
                             </gmaps-map>
-                                
+                            <div v-if="history" class="pt-5">
+                                <history-list :stories="stories" :cities="cities"></history-list>
+                            </div>    
                             
                         </v-col>
                     </v-row>
@@ -52,6 +52,9 @@
                 </v-container>
             </v-app>
         </div>
+        <script>
+            var baseUrl = "{{url('')}}" 
+        </script>
         <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
     </body>
 </html>
