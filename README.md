@@ -29,7 +29,7 @@ Se agregó la opción al menú lateral para consultar los historiales. Se creó 
 * Php 7.4 y configuración de las extensiones para iniciar el Laravel 7.0
 * Servidor Web local para montar el proyecto (Laragon,LAMP, XAMP, Wamp)
 * MySQL 5.7 o Maria DB para la base de datos
-* Requiere una API_KEY de google para el uso de la API de Maps
+* Requiere una API_KEY de google (No se incluye por razones de seguridad ya que va integrada con una cuenta de facturación) para el uso de la API de Maps. Esta se debe agregar en el archivo directorio_del_proyecto/resources/js/app.js en la línea 17. 
 
 
 
