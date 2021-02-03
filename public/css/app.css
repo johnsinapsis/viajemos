@@ -10957,3 +10957,7 @@ a.text-dark:focus {
   min-height: 200px;
 }
 
+.my-subtitle {
+  font-size: 2.5rem;
+}
+

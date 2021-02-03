@@ -25,6 +25,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "crypto-js": "^4.0.0",
+        "oauth": "^0.9.15",
         "vuetify": "^2.4.3",
         "x5-gmaps": "^0.3.31"
     }

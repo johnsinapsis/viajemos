@@ -34,7 +34,7 @@
                             md="8"
                             justify="center"
                         >
-                            <div v-if="city===0" class="text-center .text-xs-h6 padding-top-center" >
+                            <div v-if="city===0" class="text-center my-subtitle padding-top-center" >
                                 Seleccione Una ciudad para obtener información
                             </div>
                             <div v-if="city!==0">
