@@ -28,7 +28,7 @@
             <v-icon v-text="'mdi-history'"></v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title v-text="'Historial de datos'"></v-list-item-title>
+            <v-list-item-title v-text="'Historial de Consultas'"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
